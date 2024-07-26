@@ -19,22 +19,21 @@ public class CurrencyService {
         return currencyRepository.findAll();
     }
 
-    public List<Currency> getCurrencyById(Integer id) {
+    public Currency getCurrencyById(Integer id) {
         Optional<Currency> optionalCurrency = currencyRepository.findById(id);
         if (optionalCurrency.isPresent()) {
-            return (List<Currency>) optionalCurrency.get();
+            return  optionalCurrency.get();
         }
         return null;
     }
-    public Result createCurrency(CurrencyDto currencyDto, Integer id) {
-        Optional<Currency> optionalCurrency = currencyRepository.findById(id);
-        if (optionalCurrency.isPresent()) {
-            Currency currency = optionalCurrency.get();
+    public Result createCurrency(CurrencyDto currencyDto) {
+
+        Currency currency = new Currency();
             currency.setName(currencyDto.getName());
             currencyRepository.save(currency);
             return new Result(true, "Currency created");
-        }
-        return new Result(false, "Currency not found");
+
+
     }
 
     public Result updateCurrency(CurrencyDto currencyDto, Integer id) {
