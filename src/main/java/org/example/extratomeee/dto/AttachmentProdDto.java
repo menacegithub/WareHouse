@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class WareHouseDto {
-    private String name;
+public class AttachmentProdDto {
+
 }

@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @Entity
 public class AttachmentProduct {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

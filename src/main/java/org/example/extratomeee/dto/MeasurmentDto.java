@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class WareHouseDto {
+public class MeasurmentDto {
     private String name;
 }
