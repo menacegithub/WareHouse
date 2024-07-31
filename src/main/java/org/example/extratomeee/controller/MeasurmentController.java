@@ -18,16 +18,23 @@ public class MeasurmentController {
     public MeasurmentService getMeasurmentServicebyId(@PathVariable Integer id) {
         return (MeasurmentService) measurmentService.GetMeasurmentRepositoryById(id);
     }
+
+    //  xato Http
+
     @PutMapping
     public Result createMeasurment(@RequestBody MeasurmentDto measurmentDto) {
         Result measurment = measurmentService.createMeasurment(measurmentDto);
         return measurment;
     }
+     // xato http   update da integer id kelishi kerak
     @PostMapping
     public Result updateMeasurment(@RequestBody MeasurmentDto measurmentDto) {
         Result result = measurmentService.updateMeasurment(measurmentDto);
         return new Result();
     }
+
+    // xato  delete da faqat id boladi
+
     @DeleteMapping
     public Result deleteMeasurment(@PathVariable Integer id,@RequestBody MeasurmentDto measurmentDto) {
         Result measurment = measurmentService.deleteMeasurment(id);

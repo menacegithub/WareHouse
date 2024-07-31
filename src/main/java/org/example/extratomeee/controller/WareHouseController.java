@@ -27,8 +27,12 @@ public class WareHouseController {
     @PostMapping
     public Result addWareHouse(WareHouseDto wareHouseDto){
         Result result = wareHouseService.createWareHouseRepository(wareHouseDto);
-        return result;
-    }
+        return result;}
+
+
+    // update    id qolib keetgan
+
+
     @PutMapping
     public Result updateWareHouse(WareHouseDto wareHouseDto){
         Result result = wareHouseService.updateWareHouseRepository(wareHouseDto);

@@ -13,8 +13,7 @@ import java.util.Optional;
 public class MeasurmentService {
     @Autowired
     private MeasurmentRepository measurmentRepository;
-    @Autowired
-    private MeasurmentDto measurmentDto;
+
 
     public MeasurmentRepository GetMeasurmentRepository() {
         return measurmentRepository;

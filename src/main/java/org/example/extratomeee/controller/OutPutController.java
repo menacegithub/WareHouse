@@ -34,6 +34,9 @@ public class OutPutController {
         return result;
     }
 
+    // faqat id boladi
+
+
     @DeleteMapping
     public Result deleteOutPut(@PathVariable Integer id, @RequestBody OutPutDto outPutDto) {
         Result delete = outPutServise.deleteOutPut(id);

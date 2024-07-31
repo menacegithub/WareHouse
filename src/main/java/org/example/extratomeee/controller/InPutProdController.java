@@ -25,11 +25,17 @@ public class InPutProdController {
         Result inPutProduct = inPutProdService.createInPutProduct(inPutProdDto);
         return inPutProduct;
     }
+
+    // id yo'q
     @PutMapping
     public Result updateProduct(@RequestBody InPutProdDto inPutProdDto ) {
         Result result = inPutProdService.updateInPutProduct(inPutProdDto);
         return result;
     }
+
+
+    // inputDto bo'maydi  faqat id boladi
+
     @DeleteMapping
     public Result deleteProduct(@PathVariable Integer id,@RequestBody InPutProdDto inPutProdDto ) {
         Result result = inPutProdService.deleteInPutProduct(id);
