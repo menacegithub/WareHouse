@@ -28,10 +28,16 @@ public class WareHouseService {
         wareHouse.setName(wareHouseDto.getName());
         return new Result(true,"Created");
     }
-    public Result updateWareHouseRepository(WareHouseDto wareHouseDto) {
-        WareHouse wareHouse = new WareHouse();
-        wareHouse.setName(wareHouseDto.getName());
-        return new Result(true,"Updated");
+    public Result updateWareHouseRepository( Integer id , WareHouseDto wareHouseDto) {
+        Optional<WareHouse> optional = wareHouseRepository.findById(id);
+        if (optional.isPresent()) {
+
+
+            WareHouse wareHouse = new WareHouse();
+            wareHouse.setName(wareHouseDto.getName());
+            return new Result(true, "Updated");
+        }
+        return new Result(false,"not  ");
     }
     public Result deleteWareHouseRepository(Integer id) {
         wareHouseRepository.deleteById(id);

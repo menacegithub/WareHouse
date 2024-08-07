@@ -21,11 +21,11 @@ public class WareHouseController {
         return  wareHouseService.getWareHouseRepository();
     }
     @GetMapping
-    public WareHouseRepository getWareHouseRepositorybyId(Integer id) {
+    public WareHouseRepository getWareHouseRepositorybyId( @PathVariable  Integer id) {
         return  wareHouseService.getWareHouseRepositoryById(id);
     }
     @PostMapping
-    public Result addWareHouse(WareHouseDto wareHouseDto){
+    public Result addWareHouse(@RequestBody  WareHouseDto wareHouseDto){
         Result result = wareHouseService.createWareHouseRepository(wareHouseDto);
         return result;}
 
@@ -34,12 +34,12 @@ public class WareHouseController {
 
 
     @PutMapping
-    public Result updateWareHouse(WareHouseDto wareHouseDto){
-        Result result = wareHouseService.updateWareHouseRepository(wareHouseDto);
+    public Result updateWareHouse( @PathVariable Integer id , @RequestBody WareHouseDto wareHouseDto){
+        Result result = wareHouseService.updateWareHouseRepository(id,wareHouseDto);
         return result;
     }
     @DeleteMapping
-    public Result deleteWareHouse(Integer id){
+    public Result deleteWareHouse( @PathVariable  Integer id){
         Result result = wareHouseService.deleteWareHouseRepository(id);
         return result;
     }
