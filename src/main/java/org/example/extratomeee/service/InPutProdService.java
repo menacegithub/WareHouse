@@ -28,7 +28,7 @@ public class InPutProdService {
         inputProduct.setPrice(inPutProdDto.getPrice());
         return new Result(true, "Product created");
     }
-    public Result updateInPutProduct(InPutProdDto inPutProdDto) {
+    public Result updateInPutProduct(Integer id, InPutProdDto inPutProdDto) {
         InputProduct inputProduct = new InputProduct();
         inputProduct.setProduct(inPutProdDto.getProduct());
         inputProduct.setPrice(inPutProdDto.getPrice());

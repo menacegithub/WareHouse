@@ -30,7 +30,7 @@ public class MeasurmentService {
         measurmentDto1.setName(measurmentDto.getName());
         return new Result(true,"Created");
     }
-    public Result updateMeasurment(MeasurmentDto measurmentDto) {
+    public Result updateMeasurment(Integer id, MeasurmentDto measurmentDto) {
         MeasurmentDto measurmentDto1 = new MeasurmentDto();
         measurmentDto1.setName(measurmentDto.getName());
         return new Result(true,"Updated");

@@ -28,8 +28,8 @@ public class InPutProdController {
 
     // id yo'q
     @PutMapping
-    public Result updateProduct(@RequestBody InPutProdDto inPutProdDto ) {
-        Result result = inPutProdService.updateInPutProduct(inPutProdDto);
+    public Result updateProduct(@PathVariable Integer id,@RequestBody InPutProdDto inPutProdDto ) {
+        Result result = inPutProdService.updateInPutProduct(id , inPutProdDto);
         return result;
     }
 
@@ -37,7 +37,7 @@ public class InPutProdController {
     // inputDto bo'maydi  faqat id boladi
 
     @DeleteMapping
-    public Result deleteProduct(@PathVariable Integer id,@RequestBody InPutProdDto inPutProdDto ) {
+    public Result deleteProduct(@PathVariable Integer id) {
         Result result = inPutProdService.deleteInPutProduct(id);
         return result;
     }

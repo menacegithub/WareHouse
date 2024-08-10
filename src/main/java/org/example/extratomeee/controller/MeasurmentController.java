@@ -21,22 +21,22 @@ public class MeasurmentController {
 
     //  xato Http
 
-    @PutMapping
+    @PostMapping
     public Result createMeasurment(@RequestBody MeasurmentDto measurmentDto) {
         Result measurment = measurmentService.createMeasurment(measurmentDto);
         return measurment;
     }
      // xato http   update da integer id kelishi kerak
-    @PostMapping
-    public Result updateMeasurment(@RequestBody MeasurmentDto measurmentDto) {
-        Result result = measurmentService.updateMeasurment(measurmentDto);
-        return new Result();
+    @PutMapping
+    public Result updateMeasurment(@PathVariable Integer id,@RequestBody MeasurmentDto measurmentDto) {
+        Result result = measurmentService.updateMeasurment(id,measurmentDto);
+        return result;
     }
 
     // xato  delete da faqat id boladi
 
     @DeleteMapping
-    public Result deleteMeasurment(@PathVariable Integer id,@RequestBody MeasurmentDto measurmentDto) {
+    public Result deleteMeasurment(@PathVariable Integer id) {
         Result measurment = measurmentService.deleteMeasurment(id);
         return measurment;
     }
